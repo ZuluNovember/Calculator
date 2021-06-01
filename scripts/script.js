@@ -69,8 +69,15 @@ function doCalculation(currentNum) {
 }
 
 function numDisplayer(e) {
-    digitAccumulator.push(e.target.id)
-    document.querySelector('.current').textContent = `${digitAccumulator.join('')}`;
+    if(e.target.id =='.'){
+        if(!digitAccumulator.includes('.')){
+            digitAccumulator.push(e.target.id)
+            document.querySelector('.current').textContent = `${digitAccumulator.join('')}`;
+        }
+    }else{
+        digitAccumulator.push(e.target.id)
+        document.querySelector('.current').textContent = `${digitAccumulator.join('')}`;
+    }
 
 }
 

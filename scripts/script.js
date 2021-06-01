@@ -43,7 +43,7 @@ let calculator = {
 function operatorFunction(e) {
     if (digitAccumulator.length !== 0) {
 
-        let currentNum = parseInt(digitAccumulator.join(''));
+        let currentNum = Number(digitAccumulator.join(''));
         numAccumulator.push(currentNum);
         operatorAccumulator.push(e.target.id);
         previousNumberDisplay += currentNum;
@@ -104,7 +104,7 @@ function equalsFunction() {
         let calculate = calculator[operatorAccumulator[operatorAccumulator.length - 1]];
         sum = calculate(sum, currentNum);
         document.querySelector('.current').textContent = `${sum}`;
-        digitAccumulator = [sum];
+        digitAccumulator = [];
         sum = undefined;
         numAccumulator = [];
         operatorAccumulator = [];
